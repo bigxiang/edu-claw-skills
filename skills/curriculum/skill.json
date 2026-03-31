@@ -1,0 +1,32 @@
+{
+  "name": "curriculum",
+  "version": "1.0.0",
+  "description": "Curriculum Developer Platform skill for automating curriculum creation and managing knowledge base files.",
+  "homepage": "https://curriculum.ai",
+  "metadata": {
+    "emoji": "📚",
+    "category": "education",
+    "api_base": "https://edu-staging.njyaoduo.com/api/v1"
+  },
+  "endpoints": {
+    "auth": {
+      "login": "/auth/login",
+      "me": "/auth/me"
+    },
+    "knowledge": {
+      "list": "/documents/",
+      "upload": "/documents/",
+      "delete": "/documents/{id}",
+      "download": "/org/attachments/{id}/download",
+      "state": "/documents/{id}/state"
+    },
+    "generation": {
+      "create_curriculum": "/curriculums",
+      "generate_outline": "/outlines/generate",
+      "generate_ppt": "/outlines/{id}/generate_ppt_async",
+      "generate_transcripts": "/transcripts/generate_async",
+      "ppt_status": "/outlines/{id}/ppt/status",
+      "latest_rendered": "/curriculums/{id}/rendered_ppts/latest"
+    }
+  }
+}
