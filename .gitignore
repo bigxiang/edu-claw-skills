@@ -1,0 +1,2 @@
+# ignore Sisyphus workspace / agent state
+.sisyphus/

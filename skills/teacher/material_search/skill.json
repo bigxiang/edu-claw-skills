@@ -1,14 +1,15 @@
 {
   "name": "material_search",
-  "version": "1.0.0",
-  "description": "一键跨平台搜索教学素材。自动前往【学科网】与【教习网】进行关键字检索，提取资源列表并输出为结构化文档供用户查阅或批量下载。",
+  "version": "1.0.1",
+  "description": "一键跨平台搜索教学素材。自动前往【学科网】、【教习网】与【Curriculum 知识库】进行关键字检索，提取资源列表并输出为结构化文档供用户查阅或批量下载。",
   "author": "Edu-Claw",
   "metadata": {
     "emoji": "🔍",
     "category": "teacher",
     "capabilities": [
       "browser_automation",
-      "data_extraction"
+      "data_extraction",
+      "api_integration"
     ]
   },
   "parameters": {
@@ -21,8 +22,17 @@
         "type": "integer",
         "description": "每个站点爬取并提取的最大资源数量，默认 10",
         "default": 10
+      },
+      "include_knowledge_base": {
+        "type": "boolean",
+        "description": "是否包含 Curriculum 知识库检索，默认 true",
+        "default": true
       }
     },
     "required": ["keyword"]
+  },
+  "environment": {
+    "required": ["CURRICULUM_ACCESS_TOKEN"],
+    "optional": []
   }
 }
