@@ -18,7 +18,8 @@
       "upload": "/documents/",
       "delete": "/documents/{id}",
       "download": "/org/attachments/{id}/download",
-      "state": "/documents/{id}/state"
+      "state": "/documents/{id}/state",
+      "run_all": "/org-admin/documents/{id}/run-all"
     },
     "generation": {
       "create_curriculum": "/curriculums",
