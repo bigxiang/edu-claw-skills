@@ -1,9 +1,10 @@
----
+***
+
 name: curriculum
-version: 1.0.2
+version: 1.0.3
 description: Curriculum Developer Platform - Automate curriculum creation, manage knowledge bases, and process documents with AI.
-metadata: {"emoji":"📚","category":"education","api_base":"/api/v1"}
----
+metadata: {"emoji":"📚","category":"education","api\_base":"/api/v1"}
+---------------------------------------------------------------------
 
 # Curriculum Developer 📚
 
@@ -11,26 +12,27 @@ The ultimate platform for AI-powered curriculum development. Manage your knowled
 
 ## Skill Files
 
-| File | Path |
-|------|------|
-| **SKILL.md** (this file) | `skills/curriculum/SKILL.md` |
-| **AUTH.md** | `skills/curriculum/AUTH.md` |
-| **KNOWLEDGE.md** | `skills/curriculum/KNOWLEDGE.md` |
-| **LESSON_PLAN.md** | `skills/curriculum/LESSON_PLAN.md` |
-| **skill.json** (metadata) | `skills/curriculum/skill.json` |
+| File                      | Path                               |
+| ------------------------- | ---------------------------------- |
+| **SKILL.md** (this file)  | `skills/curriculum/SKILL.md`       |
+| **AUTH.md**               | `skills/curriculum/AUTH.md`        |
+| **KNOWLEDGE.md**          | `skills/curriculum/KNOWLEDGE.md`   |
+| **LESSON\_PLAN.md**       | `skills/curriculum/LESSON_PLAN.md` |
+| **skill.json** (metadata) | `skills/curriculum/skill.json`     |
 
----
+***
 
 ## What is Curriculum Developer?
 
 Curriculum Developer is a powerful toolset for educators and AI agents to:
+
 - **Manage Knowledge Bases** — Organize documents into folders and retrieve them easily.
 - **AI Document Processing** — Upload PDFs, Word docs, or text and let AI extract clean content, chunk it, and index it for RAG.
 - **Curriculum Generation** — Create structured curriculums with syllabi (outlines), PPTs, videos, and quizzes from your processed documents.
 - **Talk Notes (讲解词)** — Generate slide-by-slide scripts for your curriculum based on PPT and syllabus.
 - **Workflow Automation** — Automate the entire pipeline from file upload to final learning material.
 
----
+***
 
 ## Quick Start
 
@@ -106,20 +108,20 @@ curl -X POST https://edu-staging.njyaoduo.com/api/v1/outlines/generate \
   -d '{ "title": "Math Curriculum", "description": "High school math curriculum" }'
 ```
 
----
+***
 
 ## API Endpoints Summary
 
-| Feature | Endpoint | Method | Description |
-|---------|----------|--------|-------------|
-| **Auth** | `/auth/login` | POST | Login and get JWT token |
-| **Auth** | `/auth/me` | GET | Get current user profile |
-| **Knowledge** | `/documents/` | GET | List knowledge base documents |
-| **Knowledge** | `/documents/` | POST | Upload and process new document |
-| **Knowledge** | `/documents/{id}` | DELETE | Remove document from knowledge base |
-| **Download** | `/org/attachments/{id}/download` | GET | Download original file |
+| Feature       | Endpoint                         | Method | Description                         |
+| ------------- | -------------------------------- | ------ | ----------------------------------- |
+| **Auth**      | `/auth/login`                    | POST   | Login and get JWT token             |
+| **Auth**      | `/auth/me`                       | GET    | Get current user profile            |
+| **Knowledge** | `/documents/`                    | GET    | List knowledge base documents       |
+| **Knowledge** | `/documents/`                    | POST   | Upload and process new document     |
+| **Knowledge** | `/documents/{id}`                | DELETE | Remove document from knowledge base |
+| **Download**  | `/org/attachments/{id}/download` | GET    | Download original file              |
 
----
+***
 
 ## Credentials Storage
 
@@ -133,7 +135,7 @@ You can store your access token securely to avoid re-authenticating frequently.
 }
 ```
 
----
+***
 
 ## Security Principles
 
@@ -141,9 +143,5 @@ You can store your access token securely to avoid re-authenticating frequently.
 2. **RLS Scoping** — The platform uses Row Level Security (RLS) to ensure you only access data within your organization.
 3. **Quota Managed** — Document uploads and AI generations are subject to your account's quotas.
 
----
+***
 
-## Need Help?
-
-- 📖 Full API Design Conventions: `src/api/API_DESIGN_CONVENTIONS.md`
-- 🛠️ Internal Implementation: `src/api/v1/`

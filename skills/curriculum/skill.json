@@ -1,7 +1,9 @@
 {
   "name": "curriculum",
-  "version": "1.0.2",
+  "zh_name": "课程开发平台",
+  "version": "1.0.3",
   "description": "Curriculum Developer Platform skill for automating curriculum creation and managing knowledge base files.",
+  "zh_description": "课程开发平台技能，用于自动化课程创建和管理知识库文件。",
   "author": "Edu-Claw",
   "homepage": "https://curriculum.ai",
   "tags": ["curriculum", "education", "knowledge", "ai", "OCR", "vectorization"],
@@ -27,22 +29,26 @@
       "knowledge_base_query": {
         "type": "string",
         "description": "知识库查询问题，如：'智培通平台'",
-        "default": ""
+        "default": "",
+        "zh_name": "检索知识库"
       },
       "document_id": {
         "type": "string",
         "description": "文档ID，用于操作特定文档",
-        "default": ""
+        "default": "",
+        "zh_name": "文档ID"
       },
       "curriculum_title": {
         "type": "string",
         "description": "课程标题",
-        "default": ""
+        "default": "",
+        "zh_name": "课程标题"
       },
       "curriculum_description": {
         "type": "string",
         "description": "课程描述",
-        "default": ""
+        "default": "",
+        "zh_name": "课程描述"
       }
     },
     "required": []
@@ -55,12 +61,14 @@
   "examples": [
     {
       "description": "Query knowledge base",
+      "zh_description": "查询知识库",
       "parameters": {
         "knowledge_base_query": "智培通平台"
       }
     },
     {
       "description": "Process document with OCR and vectorization",
+      "zh_description": "使用OCR和向量化处理文档",
       "parameters": {
         "document_id": "4c96fa36-0218-452f-a10c-ebb31f315bc5"
       }
@@ -68,25 +76,73 @@
   ],
   "endpoints": {
     "auth": {
-      "login": "/auth/login",
-      "me": "/auth/me"
+      "zh_name": "认证",
+      "login": {
+        "zh_name": "登录",
+        "path": "/auth/login"
+      },
+      "me": {
+        "zh_name": "获取当前用户",
+        "path": "/auth/me"
+      }
     },
     "knowledge": {
-      "list": "/documents/",
-      "upload": "/documents/",
-      "delete": "/documents/{id}",
-      "download": "/org/attachments/{id}/download",
-      "state": "/documents/{id}/state",
-      "run_all": "/org-admin/documents/{id}/run-all",
-      "qa": "/org-admin/documents/qa/"
+      "zh_name": "知识库",
+      "list": {
+        "zh_name": "列出文档",
+        "path": "/documents/"
+      },
+      "upload": {
+        "zh_name": "上传文档",
+        "path": "/documents/"
+      },
+      "delete": {
+        "zh_name": "删除文档",
+        "path": "/documents/{id}"
+      },
+      "download": {
+        "zh_name": "下载文档",
+        "path": "/org/attachments/{id}/download"
+      },
+      "state": {
+        "zh_name": "文档状态",
+        "path": "/documents/{id}/state"
+      },
+      "run_all": {
+        "zh_name": "运行OCR和向量化",
+        "path": "/org-admin/documents/{id}/run-all"
+      },
+      "qa": {
+        "zh_name": "知识库检索",
+        "path": "/org-admin/documents/qa/"
+      }
     },
     "generation": {
-      "create_curriculum": "/curriculums",
-      "generate_outline": "/outlines/generate",
-      "generate_ppt": "/outlines/{id}/generate_ppt_async",
-      "generate_transcripts": "/transcripts/generate_async",
-      "ppt_status": "/outlines/{id}/ppt/status",
-      "latest_rendered": "/curriculums/{id}/rendered_ppts/latest"
+      "zh_name": "生成",
+      "create_curriculum": {
+        "zh_name": "创建课程",
+        "path": "/curriculums"
+      },
+      "generate_outline": {
+        "zh_name": "生成大纲",
+        "path": "/outlines/generate"
+      },
+      "generate_ppt": {
+        "zh_name": "生成PPT",
+        "path": "/outlines/{id}/generate_ppt_async"
+      },
+      "generate_transcripts": {
+        "zh_name": "生成讲解词",
+        "path": "/transcripts/generate_async"
+      },
+      "ppt_status": {
+        "zh_name": "PPT生成状态",
+        "path": "/outlines/{id}/ppt/status"
+      },
+      "latest_rendered": {
+        "zh_name": "最新渲染PPT",
+        "path": "/curriculums/{id}/rendered_ppts/latest"
+      }
     }
   }
 }
