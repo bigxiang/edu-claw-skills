@@ -1,6 +1,6 @@
 {
   "name": "material_search",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一键跨平台搜索教学素材。自动前往【学科网】、【教习网】与【Curriculum 知识库】进行关键字检索，提取资源列表并输出为结构化文档供用户查阅或批量下载。",
   "author": "Edu-Claw",
   "metadata": {
@@ -27,6 +27,11 @@
         "type": "boolean",
         "description": "是否包含 Curriculum 知识库检索，默认 true",
         "default": true
+      },
+      "knowledge_base_query": {
+        "type": "string",
+        "description": "知识库查询问题，如：'智培通平台'",
+        "default": ""
       }
     },
     "required": ["keyword"]

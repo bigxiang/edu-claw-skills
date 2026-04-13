@@ -1,6 +1,6 @@
 ---
 name: curriculum
-version: 1.0.0
+version: 1.0.2
 description: Curriculum Developer Platform - Automate curriculum creation, manage knowledge bases, and process documents with AI.
 metadata: {"emoji":"📚","category":"education","api_base":"/api/v1"}
 ---
@@ -73,6 +73,37 @@ Retrieve a file from the platform.
 curl -X GET https://edu-staging.njyaoduo.com/api/v1/org/attachments/YOUR_DOCUMENT_ID/download \
   -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
   --output downloaded_file.pdf
+```
+
+### 5. Process Document with OCR and Vectorization
+
+Run OCR and vectorization on a document.
+
+```bash
+curl -X POST https://edu-staging.njyaoduo.com/api/v1/org-admin/documents/YOUR_DOCUMENT_ID/run-all \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN"
+```
+
+### 6. Query Knowledge Base
+
+Ask questions about your knowledge base documents.
+
+```bash
+curl -X POST https://edu-staging.njyaoduo.com/api/v1/org-admin/documents/qa/ \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -d '{ "question": "智培通平台" }'
+```
+
+### 7. Generate Curriculum Outline
+
+Create a curriculum outline from your documents.
+
+```bash
+curl -X POST https://edu-staging.njyaoduo.com/api/v1/outlines/generate \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer YOUR_ACCESS_TOKEN" \
+  -d '{ "title": "Math Curriculum", "description": "High school math curriculum" }'
 ```
 
 ---

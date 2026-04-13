@@ -1,13 +1,71 @@
 {
   "name": "curriculum",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Curriculum Developer Platform skill for automating curriculum creation and managing knowledge base files.",
+  "author": "Edu-Claw",
   "homepage": "https://curriculum.ai",
+  "tags": ["curriculum", "education", "knowledge", "ai", "OCR", "vectorization"],
+  "search_keywords": ["课程开发", "知识库管理", "OCR识别", "向量化处理", "教学素材", "课程生成"],
+  "capabilities": [
+    "curriculum_creation",
+    "knowledge_management",
+    "file_processing",
+    "OCR_recognition",
+    "vectorization",
+    "knowledge_base_qa",
+    "ppt_generation",
+    "transcript_generation"
+  ],
   "metadata": {
     "emoji": "📚",
     "category": "education",
-    "api_base": "https://edu-staging.njyaoduo.com/api/v1"
+    "api_base": "https://edu-staging.njyaoduo.com/api/v1",
+    "version_check_url": "https://registry.edu-claw.com/skills/curriculum/version"
   },
+  "parameters": {
+    "properties": {
+      "knowledge_base_query": {
+        "type": "string",
+        "description": "知识库查询问题，如：'智培通平台'",
+        "default": ""
+      },
+      "document_id": {
+        "type": "string",
+        "description": "文档ID，用于操作特定文档",
+        "default": ""
+      },
+      "curriculum_title": {
+        "type": "string",
+        "description": "课程标题",
+        "default": ""
+      },
+      "curriculum_description": {
+        "type": "string",
+        "description": "课程描述",
+        "default": ""
+      }
+    },
+    "required": []
+  },
+  "environment": {
+    "required": ["CURRICULUM_ACCESS_TOKEN"],
+    "optional": []
+  },
+  "usage": "This skill provides API access to the Curriculum Developer Platform, allowing you to manage knowledge base files, process documents with OCR and vectorization, generate curriculum materials, and query the knowledge base.",
+  "examples": [
+    {
+      "description": "Query knowledge base",
+      "parameters": {
+        "knowledge_base_query": "智培通平台"
+      }
+    },
+    {
+      "description": "Process document with OCR and vectorization",
+      "parameters": {
+        "document_id": "4c96fa36-0218-452f-a10c-ebb31f315bc5"
+      }
+    }
+  ],
   "endpoints": {
     "auth": {
       "login": "/auth/login",
@@ -19,7 +77,8 @@
       "delete": "/documents/{id}",
       "download": "/org/attachments/{id}/download",
       "state": "/documents/{id}/state",
-      "run_all": "/org-admin/documents/{id}/run-all"
+      "run_all": "/org-admin/documents/{id}/run-all",
+      "qa": "/org-admin/documents/qa/"
     },
     "generation": {
       "create_curriculum": "/curriculums",
